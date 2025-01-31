@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useEvent } from "src/shared/hooks/useEvent";
+import { usePortal } from "src/shared/modules/portals";
 import { Button, WrapperModal } from "src/components";
 import { ExampleModalComp } from "./types";
-import { usePortal } from "src/shared/modules/portals";
 
 const ExampleModal: ExampleModalComp = () => {
   const [value, setValue] = useState("");
