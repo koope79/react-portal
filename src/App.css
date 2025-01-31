@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.basePortal {
+  position: fixed;
+  transition: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  opacity: 0;
+}
+
+.basePortalOpened {
+  opacity: 1;
+}
