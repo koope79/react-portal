@@ -4,7 +4,7 @@ import { usePortal } from "src/shared/modules/portals";
 import "./App.css";
 
 export default function App() {
-  const { Portal, show, close } = usePortal({ id: "_base_portal" });
+  const { Portal, open, close } = usePortal({ id: "_base_portal" });
 
   console.log("render App");
 
@@ -17,7 +17,7 @@ export default function App() {
             <ExampleModal />
           </WrapperModal>
         </Portal>
-        <Button onClick={show}>Accept</Button>
+        <Button onClick={open}>Accept</Button>
       </div>
     </>
   );

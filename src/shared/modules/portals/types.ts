@@ -1,26 +1,26 @@
 import { FC, ReactNode, ReactPortal } from "react";
 
+type PortalArgs = {
+  id: string
+  isOpen: boolean
+}
+
 type PortalProps = {
   children: ReactNode
 }
 
-export type PortalCreate = (
-  id: string,
-  isShow: boolean,
-) => (
-  { children }: PortalProps
-) => ReactPortal | null
+export type PortalCreate = ({ id, isOpen }: PortalArgs) => ({ children }: PortalProps) => ReactPortal | null
 
-type Props = {
+type UsePortalProps = {
   id: string
-  defaultShow?: boolean
+  defaultOpen?: boolean
 }
 
 type UsePortalReturn = {
   Portal: FC<PortalProps>
-  isShow: boolean
-  show: () => void
+  isOpen: boolean
+  open: () => void
   close: () => void
 }
 
-export type UsePortal = ({ id }: Props) => UsePortalReturn
+export type UsePortal = ({ id, defaultOpen }: UsePortalProps) => UsePortalReturn

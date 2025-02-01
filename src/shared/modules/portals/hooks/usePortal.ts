@@ -4,23 +4,23 @@ import { UsePortal } from "../types";
 
 const usePortal: UsePortal = ({
   id,
-  defaultShow = false,
+  defaultOpen = false,
 }) => {
-  const [isShow, setIsShow] = useState(defaultShow);
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  const { show, close } = useMemo(() => ({
-    show: () => {
-      setIsShow(true);
+  const { open, close } = useMemo(() => ({
+    open: () => {
+      setIsOpen(true);
     },
     close: () => {
-      setIsShow(false);
+      setIsOpen(false);
     },
   }), []);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const Portal = useCallback(portalCreate(id, isShow), [id, isShow]);
+  const Portal = useCallback(portalCreate({ id, isOpen }), [id, isOpen]);
 
-  return { Portal, isShow, show, close };
+  return { Portal, isOpen, open, close };
 };
 
 export default usePortal;

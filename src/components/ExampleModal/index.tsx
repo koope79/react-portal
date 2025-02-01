@@ -7,7 +7,7 @@ import { ExampleModalComp } from "./types";
 const ExampleModal: ExampleModalComp = () => {
   const [value, setValue] = useState("");
 
-  const { Portal, show, close } = usePortal({ id: "_base_portal" });
+  const { Portal, open, close } = usePortal({ id: "_base_portal" });
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -15,7 +15,7 @@ const ExampleModal: ExampleModalComp = () => {
 
   const onClick = useEvent(() => {
     console.log(value);
-    show();
+    open();
   });
 
   console.log("re-render ExampleModal");
