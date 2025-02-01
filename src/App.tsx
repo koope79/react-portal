@@ -10,15 +10,13 @@ export default function App() {
 
   return (
     <>
-      <div className={"App"}>
-        <div id={"_base_portal"}></div>
-        <Portal>
-          <WrapperModal onClose={close}>
-            <ExampleModal />
-          </WrapperModal>
-        </Portal>
-        <Button onClick={open}>Accept</Button>
-      </div>
+      <div id={"_base_portal"}></div>
+      <Portal>
+        <WrapperModal onClose={close}>
+          <ExampleModal />
+        </WrapperModal>
+      </Portal>
+      <Button onClick={open}>Accept</Button>
     </>
   );
 }
