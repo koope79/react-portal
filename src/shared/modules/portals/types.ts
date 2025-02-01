@@ -1,15 +1,15 @@
 import { FC, ReactNode, ReactPortal } from "react";
 
-type PortalArgs = {
-  id: string
-  isOpen: boolean
-}
-
 type PortalProps = {
   children: ReactNode
 }
 
-export type PortalCreate = ({ id, isOpen }: PortalArgs) => ({ children }: PortalProps) => ReactPortal | null
+type PortalCreateArgs = {
+  id: string
+  isOpen: boolean
+}
+
+export type PortalCreate = ({ id, isOpen }: PortalCreateArgs) => ({ children }: PortalProps) => ReactPortal | null
 
 type UsePortalProps = {
   id: string
